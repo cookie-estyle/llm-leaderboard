@@ -22,7 +22,7 @@ def start_vllm_server():
     if model_artifact_path is not None:
         artifact = run.use_artifact(model_artifact_path, type='model')
         artifact = Path(artifact.download())
-        cfg.model.update({"local_path": artifact / artifact.name.split(":")[0]})
+        cfg.model.update({"local_path": artifact})
 
     def run_vllm_server():
         # set tokenizer_config

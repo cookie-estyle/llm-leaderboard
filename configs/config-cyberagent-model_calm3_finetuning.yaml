@@ -1,0 +1,15 @@
+wandb:
+  run_name: "cyberagent/model_calm3_finetuning" # use run_name defined above
+
+# if you don't use api, please set "api" as "false"
+# if you use api, please select from "openai", "anthoropic", "google", "cohere", "vllm"
+api: vllm
+batch_size: 256 # vllmは256, apiは32を推奨
+
+model:
+  use_wandb_artifacts: true
+  artifacts_path: "ailab-rl/model-share/model_calm3_finetuning:v0"
+  pretrained_model_name_or_path: "ailab-rl/model-share/model_calm3_finetuning:v0"
+  chat_template: "cyberagent/model_calm3_finetuning"
+  size_category: "10B≤ <30B"
+  release_date: "1/20/2025"
